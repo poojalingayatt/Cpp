@@ -3,20 +3,28 @@
 
 void main()
 {
-    int n,i,sum=0;
+    int i, Digit, Num, sum=0;
     printf("Enter the number of digits:");
-    scanf("%d",&n);
-    int num[n];
+    scanf("%d",&Digit);
 
+    printf("Enter the number:");
+    scanf("%d",&Num);
 
-         for(i=0; i<n; i++)
-         {
-             printf("\nEnter the %d number:",i+1);
-             scanf("%d",&num[i]);
-             sum+= pow(num[i],n);
-         }
+    int t=Num;
 
-    if(sum == num)
+    for(i=0; i<Digit; i++)
+    {
+        int square= pow((Num%10),Digit);
+        Num=Num/10;
+        sum+= square;
+    }
+
+    Num=t;
+
+    if(sum == Num)
     printf("\nNumber is Armstrong Number");
+    else
+    printf("\nNumber is not Armstrong Number");
+    printf("\n");
+    printf("\n24CE060_POOJA\n");
 }
-

@@ -1,3 +1,7 @@
+/* Programmer: Pooja Lingayat
+   Date: 7-3-25
+   Aim: To implement an abstract class for students and compute grades for undergraduate and postgraduate students using runtime polymorphism. */
+
 #include<iostream>
 #include<string>
 using namespace std;

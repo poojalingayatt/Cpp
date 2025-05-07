@@ -1,5 +1,5 @@
 /* Programmer: Pooja Lingayat
-   Date: -05-25
+   Date: 25-4-25
    Aim: Display student marks and tuition fees using formatting manipulators and a custom currency symbol.*/
 
 #include <iostream>

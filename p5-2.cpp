@@ -1,3 +1,7 @@
+/* Programmer: Pooja Lingayat
+   Date: 21-3-25
+   Aim: To implement operator overloading in C++ for complex number addition, subtraction, input, and output. */
+
 #include<iostream>
 using namespace std;
 

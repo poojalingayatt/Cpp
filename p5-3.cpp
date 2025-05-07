@@ -1,3 +1,7 @@
+/* Programmer: Pooja Lingayat
+   Date: 24-3-25
+   Aim: To overload unary and binary operators in C++ for a Point class (negation, addition, and comparison). */
+
 #include<iostream>
 using namespace std;
 

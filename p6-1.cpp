@@ -1,5 +1,5 @@
 /* Programmer: Pooja Lingayat
-   Date: -4-25
+   Date: 7-4-25
    Aim: To implement a dynamic array using OOP concepts without using STL, supporting insertion, deletion, and access operations */
 
 #include <iostream>

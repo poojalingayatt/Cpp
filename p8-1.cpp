@@ -1,5 +1,5 @@
 /* Programmer: Pooja Lingayat
-   Date: -05-25
+   Date: 28-4-25
    Aim: Reverse a sequence of integers using both std::reverse and manual iteration approaches.*/
 
 #include <iostream>

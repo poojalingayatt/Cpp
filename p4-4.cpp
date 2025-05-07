@@ -1,3 +1,7 @@
+/* Programmer: Pooja Lingayat
+   Date: 3-3-25
+   Aim: To implement a bank account system using inheritance and runtime polymorphism for savings and current accounts. */
+
 #include<iostream>
 #include<string>
 using namespace std;

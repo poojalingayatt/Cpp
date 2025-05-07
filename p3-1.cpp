@@ -1,5 +1,5 @@
 /* Programmer: Pooja Lingayat
-   Date:10-2-25
+   Date:17-2-25
    Aim:to create an employee payroll management system for a retail store*/
 
 #include<iostream>

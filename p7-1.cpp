@@ -1,3 +1,7 @@
+/* Programmer: Pooja Lingayat
+   Date: 18-4-25
+   Aim: To implement a word frequency counter that reads a paragraph from a file and counts the occurrences of each word. */
+
 #include <iostream>
 #include <fstream>
 #include <string>

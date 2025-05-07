@@ -1,3 +1,7 @@
+/* Programmer: Pooja Lingayat
+   Date: 4-4-25
+   Aim: To compute areas of rectangles and circles based on user input. */
+
 #include<iostream>
 #include<cmath>
 using namespace std;

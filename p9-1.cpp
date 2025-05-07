@@ -1,5 +1,5 @@
 /* Programmer: Pooja Lingayat
-   Date: -05-25
+   Date: 9-05-25
    Aim: Calculate loan-to-income ratio with proper input validation and error handling.
 */
 

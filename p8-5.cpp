@@ -1,5 +1,5 @@
 /* Programmer: Pooja Lingayat
-   Date: -05-25
+   Date: 5-05-25
    Aim: To implement a directory management system using maps and vectors that allows folder creation, file insertion, and displays the structure hierarchically with sorted folder names.
 */
 
@@ -16,9 +16,9 @@ void addFolder(map<string, vector<string>>& directory, const string& folderName)
     {
         directory[folderName] = {};
         cout << "Folder '" << folderName << "' created.\n";
-    } else {
+    } 
+    else
         cout << "Folder '" << folderName << "' already exists.\n";
-    }
 }
 
 void addFileToFolder(map<string, vector<string>>& directory, const string& folderName, const string& fileName)
@@ -27,9 +27,9 @@ void addFileToFolder(map<string, vector<string>>& directory, const string& folde
     {
         directory[folderName].push_back(fileName);
         cout << "File '" << fileName << "' added to folder '" << folderName << "'.\n";
-    } else {
-        cout << "Folder '" << folderName << "' does not exist.\n";
     }
+    else 
+        cout << "Folder '" << folderName << "' does not exist.\n";
 }
 
 void displayDirectory(const map<string, vector<string>>& directory)

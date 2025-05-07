@@ -1,5 +1,5 @@
 /* Programmer: Pooja Lingayat
-   Date:10-2-25
+   Date:7-2-25
    Aim:to create a rectangle management system*/
 
 #include <iostream>

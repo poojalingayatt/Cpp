@@ -1,3 +1,7 @@
+/* Programmer: Pooja Lingayat
+   Date: 24-3-25
+   Aim: To implement conversion between Celsius and Fahrenheit using classes and check equality of temperatures. */
+
 #include<iostream>
 using namespace std;
 
@@ -76,11 +80,11 @@ int main()
 
     // Convert Celsius to Fahrenheit
     Fahrenheit f2 = c1.toFahrenheit();
-    cout << "Celsius to Fahrenheit: " << f2.getTemp() << "°F" << endl;
+    cout << "Celsius to Fahrenheit: " << f2.getTemp() << "Â°F" << endl;
 
     // Convert Fahrenheit to Celsius
     Celsius c2 = f1.toCelsius();
-    cout << "Fahrenheit to Celsius: " << c2.getTemp() << "°C" << endl;
+    cout << "Fahrenheit to Celsius: " << c2.getTemp() << "Â°C" << endl;
 
     // Compare
     if (c1.isEqual(f1))

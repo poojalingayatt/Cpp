@@ -1,3 +1,7 @@
+/* Programmer: Pooja Lingayat
+   Date: 21-3-25
+   Aim: To implement function overloading by creating a calculator that adds different combinations of int and float values. */
+
 #include<iostream>
 using namespace std;
 

@@ -1,3 +1,6 @@
+/* Programmer: Pooja Lingayat
+   Date: 18-4-25
+   Aim: To implement static and dynamic memory management for calculating the area of circles using OOP and vectors in C++. */
 #include <iostream>
 #include <vector>
 #define PI 3.14159

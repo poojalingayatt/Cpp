@@ -1,3 +1,7 @@
+/* Programmer: Pooja Lingayat
+   Date: 28-2-25
+   Aim: To demonstrate multilevel inheritance by managing manager details using Person, Employee, and Manager classes. */
+
 #include<iostream>
 #include<string>
 using namespace std;

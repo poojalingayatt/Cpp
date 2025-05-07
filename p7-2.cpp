@@ -1,5 +1,5 @@
 /* Programmer: Pooja Lingayat
-   Date: -05-25
+   Date: 14-04-25
    Aim: To process a text file and count total lines, words, and characters using dynamic memory and without <cstring>.*/
 
 #include <iostream>

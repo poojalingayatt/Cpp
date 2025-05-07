@@ -1,5 +1,5 @@
 /* Programmer: Pooja Lingayat
-   Date:10-2-25
+   Date:17-2-25
    Aim: To compare recursive and iterative approaches for calculating the sum of an array */
 
 #include <iostream>

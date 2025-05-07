@@ -1,5 +1,5 @@
 /* Programmer: Pooja Lingayat
-   Date: -04-25
+   Date: 11-04-25
    Aim: To merge two dynamically-sized sorted arrays into a single sorted array using manual memory management.
 */
 

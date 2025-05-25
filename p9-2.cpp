@@ -5,101 +5,111 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
+#include <stdexcept>
 using namespace std;
 
-const int MAX_LOGS = 100;
-
-struct Transaction
-{
-    string type;
-    double amount;
-    string status;
-};
-
-class BankAccount
-{
-    string name;
-    int accountNumber;
+class BankAccount {
+private:
+    string accountHolder;
     double balance;
-    Transaction log[MAX_LOGS];
-    int logCount;
+    vector<string> transactions;  // Using vector instead of raw pointer
+
+    void logTransaction(const string& log) {
+        transactions.push_back(log);
+    }
 
 public:
-    BankAccount(string n, int accNo, double initialBalance)
-    {
-        name = n;
-        accountNumber = accNo;
+    BankAccount(const string& name, double initialBalance) {
+        accountHolder = name;
         balance = initialBalance;
-        logCount = 0;
     }
 
-    void deposit(double amount)
-    {
-        if (amount <= 0)
-        {
-            logTransaction("Deposit", amount, "Failed - Invalid Amount");
-            cout << "Deposit failed: Amount must be positive.\n";
-            return;
+    void deposit(double amount) {
+        if (amount <= 0) {
+            throw invalid_argument("Deposit amount must be positive.");
         }
         balance += amount;
-        logTransaction("Deposit", amount, "Success");
-        cout << "Deposited: Rs." << amount << endl;
+        logTransaction("Deposited: ₹" + to_string(amount));
     }
 
-    void withdraw(double amount)
-    {
-        if (amount <= 0)
-        {
-            logTransaction("Withdraw", amount, "Failed - Invalid Amount");
-            cout << "Withdrawal failed: Amount must be positive.\n";
-            return;
+    void withdraw(double amount) {
+        if (amount <= 0) {
+            throw invalid_argument("Withdrawal amount must be positive.");
         }
-        if (amount > balance)
-        {
-            logTransaction("Withdraw", amount, "Failed - Insufficient Balance");
-            cout << "Withdrawal failed: Insufficient balance.\n";
-            return;
+        if (amount > balance) {
+            throw runtime_error("Insufficient balance.");
         }
         balance -= amount;
-        logTransaction("Withdraw", amount, "Success");
-        cout << "Withdrawn: Rs." << amount << endl;
+        logTransaction("Withdrew: ₹" + to_string(amount));
     }
 
-    void logTransaction(string type, double amount, string status)
-    {
-        if (logCount < MAX_LOGS)
-        {
-            log[logCount++] = {type, amount, status};
+    void displayBalance() const {
+        cout << "Current Balance: ₹" << balance << endl;
+    }
+
+    void showTransactionHistory() const {
+        cout << "\nTransaction History for " << accountHolder << ":\n";
+        if (transactions.empty()) {
+            cout << "No transactions yet.\n";
+        } else {
+            for (size_t i = 0; i < transactions.size(); ++i) {
+                cout << i + 1 << ". " << transactions[i] << endl;
+            }
         }
-    }
-
-    void printTransactionLog()
-    {
-        cout << "\n--- Transaction Log ---\n";
-        for (int i = 0; i < logCount; ++i)
-        {
-            cout << log[i].type << " Rs." << log[i].amount << " - " << log[i].status << endl;
-        }
-    }
-
-    void displayBalance()
-    {
-        cout << "\nCurrent Balance: Rs." << balance << endl;
     }
 };
 
-int main()
-{
-    BankAccount acc("Pooja Lingayat", 1001, 5000);
+int main() {
+    string name;
+    double initialBalance;
 
-    acc.deposit(2000);
-    acc.withdraw(1000);
-    acc.withdraw(10000);  // Error case
-    acc.deposit(-500);    // Error case
+    cout << "Enter account holder's name: ";
+    getline(cin, name);
 
-    acc.displayBalance();
-    acc.printTransactionLog();
+    cout << "Enter initial balance: ₹";
+    cin >> initialBalance;
 
+    BankAccount account(name, initialBalance);
+
+    int choice;
+    double amount;
+
+    do {
+        cout << "\n1. Deposit\n2. Withdraw\n3. Show Balance\n4. Show Transaction History\n5. Exit\n";
+        cout << "Enter your choice: ";
+        cin >> choice;
+
+        try {
+            switch (choice) {
+                case 1:
+                    cout << "Enter deposit amount: ₹";
+                    cin >> amount;
+                    account.deposit(amount);
+                    break;
+                case 2:
+                    cout << "Enter withdrawal amount: ₹";
+                    cin >> amount;
+                    account.withdraw(amount);
+                    break;
+                case 3:
+                    account.displayBalance();
+                    break;
+                case 4:
+                    account.showTransactionHistory();
+                    break;
+                case 5:
+                    cout << "Exiting...\n";
+                    break;
+                default:
+                    cout << "Invalid choice. Please try again.\n";
+            }
+        } catch (const exception& e) {
+            cout << "Error: " << e.what() << endl;
+        }
+
+    } while (choice != 5);
+   
     cout << "\n24CE060_POOJA\n";
     return 0;
 }
